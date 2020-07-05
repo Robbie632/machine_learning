@@ -2,6 +2,15 @@
 Functions for modeling data
 '''
 
+from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV, GridSearchCV, train_test_split
+from sklearn.metrics import accuracy_score, f1_score
+from sklearn.ensemble import RandomForestClassifier
+from imblearn.over_sampling import SMOTE
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
+
 class myModel:
     
     '''
@@ -52,10 +61,6 @@ class myModel:
         
         '''
         
-        from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV, GridSearchCV, train_test_split
-        from sklearn.metrics import accuracy_score, f1_score
-        from sklearn.ensemble import RandomForestClassifier
-        from imblearn.over_sampling import SMOTE
 
         if True:
             skf = StratifiedKFold(n_splits=10, random_state=42)
@@ -151,11 +156,6 @@ class myModel:
         
         '''
         
-        from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV, GridSearchCV, train_test_split
-        from sklearn.metrics import accuracy_score, f1_score
-        from sklearn.svm import SVC
-        from imblearn.over_sampling import SMOTE
-
         if True:
             skf = StratifiedKFold(n_splits=10, random_state=42)
             
@@ -243,11 +243,7 @@ class myModel:
 
         
         '''
-        
-        from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV, GridSearchCV, train_test_split
-        from sklearn.metrics import accuracy_score, f1_score
-        from sklearn.neighbors import KNeighborsClassifier
-        from imblearn.over_sampling import SMOTE
+
 
         if True:
             skf = StratifiedKFold(n_splits=10, random_state=42)
@@ -369,10 +365,7 @@ class bestHyperparamaters:
             
             
         '''
-        
-        from imblearn.over_sampling import SMOTE
-        from sklearn.ensemble import RandomForestClassifier
-        from sklearn.model_selection import GridSearchCV
+    
 
         X_post_smote, y_post_smote = SMOTE(random_state=42).fit_sample(self.X, self.y)
         

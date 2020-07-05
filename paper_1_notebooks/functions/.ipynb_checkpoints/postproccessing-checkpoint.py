@@ -2,6 +2,9 @@
 Functions to proccess results
 '''
 
+import pandas as pd
+import numpy as np
+import swifter
 
 def process_results(model, data, best_feats, uniques, identifiers):
     
@@ -27,10 +30,7 @@ def process_results(model, data, best_feats, uniques, identifiers):
         final_pred_df : pandas dataframe, contains predictions from model, unique identifiers and probabilities for all classes
         
     '''
-    
-    import pandas as pd
-    import numpy as np
-    import swifter
+
     
     y_pred = model.predict(np.array(data[best_feats]))
     y_pred_proba = model.predict_proba(np.array(data[best_feats]))
@@ -60,9 +60,6 @@ def process_results(model, data, best_feats, uniques, identifiers):
 
 
 def proccess_feature_importances(my_data, feature_importance_dictionary, best_feats):
-    
-    import pandas as pd
-    import numpy as np
     
     
     feat_imp_df = pd.DataFrame(data = feature_importance_dictionary)

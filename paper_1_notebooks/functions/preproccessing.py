@@ -1,19 +1,15 @@
 '''
 Functions for preproccessing data
 '''
-
-
+import swifter
+import pandas as pd
+import numpy as np
 
 def clean_columns(data, features_start, features_end):
 
     '''
     cleans strings and unwanted characters from feature data
     '''
-    
-    import swifter
-    import pandas as pd
-    import numpy as np
-    
     
     for column_name in data.columns.values[features_start:features_end]:
         print(column_name)
@@ -83,10 +79,6 @@ def replace_outliers(data, features_start, features_end, num_stds):
     
         data : pandas dataframe, data with outliers replaced with mean value for the associated column
     '''
-    
-    import swifter
-    import pandas as pd
-    import numpy as np
     
     std_dict_geo = {}
     mean_dict_geo = {}

@@ -2,6 +2,10 @@
 functions to assess data
 '''
 
+    
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import learning_curve
 
 
 def learningCurve(model, X, y, cv, train_sizes = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]):
@@ -25,10 +29,7 @@ def learningCurve(model, X, y, cv, train_sizes = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.
         
     '''
     
-    
-    import numpy as np
-    import pandas as pd
-    from sklearn.model_selection import learning_curve
+
     
     train_sizes, train_scores, test_scores = learning_curve(model, X = X, y = y, cv=cv, n_jobs=-1, train_sizes= train_sizes,
                                                             shuffle = True, scoring = 'f1_macro', verbose = 2, random_state=42)
